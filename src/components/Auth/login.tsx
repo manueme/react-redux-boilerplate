@@ -18,7 +18,7 @@ export const Login: React.FC = () => {
   const dispatch = useDispatch();
   const auth = useSelector(
     (state: IAppState) => state.auth,
-    (left, right) => left.fetching.login !== right.fetching.login
+    (left, right) => left.fetching.login === right.fetching.login
   );
   const [formResult, setFormResult] = useState<Partial<ILoginActionInput>>({});
   const [error, setError] = useState<IFormError<ILoginActionInput> | undefined>(

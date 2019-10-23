@@ -17,7 +17,7 @@ export const SignUp: React.FC = () => {
   const dispatch = useDispatch();
   const auth = useSelector(
     (state: IAppState) => state.auth,
-    (left, right) => left.fetching.signUp !== right.fetching.signUp
+    (left, right) => left.fetching.signUp === right.fetching.signUp
   );
   const [formResult, setFormResult] = useState<Partial<ISignUpActionInput>>({});
   const [error, setError] = useState<

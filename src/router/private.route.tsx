@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import { Route, Redirect, RouteComponentProps } from "react-router-dom";
 import { getLoginRoute } from "./routes";
 import { getStoredUserAuth } from "../modules/Auth/auth";
-import { useDispatch, useSelector } from "react-redux";
+import { shallowEqual, useDispatch, useSelector } from "react-redux";
 import { IAppState } from "../modules/App/app.types";
 import { meAction } from "../modules/User/user.actions";
 
@@ -23,11 +23,7 @@ const PrivateRoute: React.FC<IPrivateRouteProps> = ({
 }) => {
   const auth = getStoredUserAuth();
 
-  const user = useSelector(
-    (state: IAppState) => state.user,
-    (left, right) =>
-      left.userData !== right.userData || left.error.me !== right.error.me
-  );
+  const user = useSelector((state: IAppState) => state.user, shallowEqual);
   const dispatch = useDispatch();
 
   useEffect(() => {

@@ -19,11 +19,19 @@ export default function userReducer(
 ): IUserState {
   const meResult = processStandarAction(action, meAction);
   if (meResult) {
-    state.error.me = meResult.error;
-    state.fetching.me = meResult.fetching;
-    state.apiError = meResult.apiError || state.apiError;
-    state.userData = meResult.payload || state.userData;
-    return state;
+    return {
+      ...state,
+      error: {
+        ...state.error,
+        me: meResult.error
+      },
+      fetching: {
+        ...state.fetching,
+        me: meResult.fetching
+      },
+      apiError: meResult.apiError || state.apiError,
+      userData: meResult.payload || state.userData
+    };
   }
 
   return state;

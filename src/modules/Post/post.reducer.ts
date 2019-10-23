@@ -19,11 +19,19 @@ export default function postReducer(
 ): IPostState {
   const getPostsResult = processStandarAction(action, getPostsAction);
   if (getPostsResult) {
-    state.error.getPosts = getPostsResult.error;
-    state.fetching.getPosts = getPostsResult.fetching;
-    state.apiError = getPostsResult.apiError || state.apiError;
-    state.postData = getPostsResult.payload || state.postData;
-    return state;
+    return {
+      ...state,
+      error: {
+        ...state.error,
+        getPosts: getPostsResult.error
+      },
+      fetching: {
+        ...state.fetching,
+        getPosts: getPostsResult.fetching
+      },
+      apiError: getPostsResult.apiError || state.apiError,
+      postData: getPostsResult.payload || state.postData
+    };
   }
 
   return state;

@@ -14,7 +14,7 @@ export const ROUTER_STORE_INITIAL_STATE: RouterState = {
     search: "",
     state: null
   },
-  action: "PUSH"
+  action: "POP"
 };
 
 export const APP_STORE_INITIAL_STATE: IAppState = {
