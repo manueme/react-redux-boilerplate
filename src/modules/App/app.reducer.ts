@@ -4,6 +4,7 @@ import { History } from "history";
 import { connectRouter, RouterState } from "connected-react-router";
 import authReducer, { AUTH_STORE_INITIAL_STATE } from "../Auth/auth.reducer";
 import userReducer, { USER_STORE_INITIAL_STATE } from "../User/user.reducer";
+import postReducer, { POST_STORE_INITIAL_STATE } from "../Post/post.reducer";
 import { AppAction, logoutAction } from "./app.actions";
 
 export const ROUTER_STORE_INITIAL_STATE: RouterState = {
@@ -19,7 +20,8 @@ export const ROUTER_STORE_INITIAL_STATE: RouterState = {
 export const APP_STORE_INITIAL_STATE: IAppState = {
   auth: AUTH_STORE_INITIAL_STATE,
   user: USER_STORE_INITIAL_STATE,
-  router: ROUTER_STORE_INITIAL_STATE
+  router: ROUTER_STORE_INITIAL_STATE,
+  post: POST_STORE_INITIAL_STATE
 };
 
 const appReducer = (
@@ -46,7 +48,8 @@ export const createRootReducer = (history: History) =>
     combineReducers({
       auth: authReducer,
       router: connectRouter(history),
-      user: userReducer
+      user: userReducer,
+      post: postReducer
     })
   );
 

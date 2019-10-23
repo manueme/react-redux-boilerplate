@@ -3,6 +3,7 @@ import actionCreatorFactory from "typescript-fsa";
 import { IApiError } from "./app.types";
 import { MeAction } from "../User/user.actions";
 import { RouterAction } from "connected-react-router";
+import { PostAction } from "../Post/post.actions";
 
 export const logoutAction = actionCreatorFactory().async<
   undefined,
@@ -11,6 +12,7 @@ export const logoutAction = actionCreatorFactory().async<
 >("LOGOUT_ACTION");
 
 export type AppAction =
+  | PostAction
   | RouterAction
   | MeAction
   | AuthAction

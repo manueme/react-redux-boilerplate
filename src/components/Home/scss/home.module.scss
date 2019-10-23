@@ -1,3 +1,41 @@
+@import "../../../assets/scss/constants";
+
 .home_wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   color: white;
+  font-family: 'Raleway', sans-serif;
+}
+
+.home_header {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  background: $raisin-black-color;
+  padding: 10px;
+  margin-bottom: 25px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.filter {
+  width: 250px;
+  margin: 10px auto 10px 15px;
+}
+
+.post {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+  background: $licorice-color;
+  padding: 10px;
+  margin: 10px 0;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25);
+}
+
+.log_out_button {
+  width: 250px;
+  margin: 45px 0;
 }
