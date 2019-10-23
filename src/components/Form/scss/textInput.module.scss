@@ -1,0 +1,86 @@
+@import "../../../assets/scss/constants";
+
+.text_input_wrapper {
+  display: flex;
+  align-items: center;
+  position: relative;
+  background-color: white;
+
+  &.warning input {
+    border: $ruby-color 1px solid;
+    color: $ruby-color;
+  }
+
+  &:hover .show_pass_icon {
+    opacity: 1;
+  }
+
+  &.warning_message::before {
+    content: attr(data-tip);
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-weight: 500;
+    position: absolute;
+    z-index: 999;
+    white-space: nowrap;
+    bottom: 9999px;
+    left: 50%;
+    background: #D81159;
+    border-radius: 4px;
+    color: #e0e0e0;
+    padding: 7px;
+    line-height: 20px;
+    height: 20px;
+    top: -25px;
+    opacity: 0;
+    transition: opacity 0.4s ease-out;
+    text-shadow: none;
+  }
+
+  &.warning_message:hover::before {
+    opacity: 1;
+    bottom: -35px;
+  }
+
+  input {
+    width: 100%;
+    height: 50px;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    padding: 0 12px;
+  }
+}
+
+.warning_icon {
+  position: absolute;
+  right: 16px;
+  opacity: 0;
+  transition: all 0.35s ease;
+  -webkit-transition: all 0.35s ease;
+  will-change: opacity;
+}
+
+.warning .warning_icon {
+  opacity: 1;
+}
+
+.show_pass_icon {
+  position: absolute;
+  right: 16px;
+  transition: all 0.25s ease;
+  -webkit-transition: all 0.25s ease;
+  will-change: opacity;
+  opacity: 0;
+}
+
+.warning .show_pass_icon {
+  right: 50px;
+}
+
+

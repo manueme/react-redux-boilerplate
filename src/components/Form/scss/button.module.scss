@@ -1,0 +1,24 @@
+@import "../../../assets/scss/constants";
+
+.button_wrapper {
+  display: flex;
+  height: 50px;
+  button {
+    background: $cerulean-color;
+    box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+    border: none;
+    width: 100%;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    font-size: 18px;
+    line-height: 21px;
+    cursor: pointer;
+    -webkit-transition: all 0.1s ease-out;
+    -moz-transition: all 0.1s ease-out;
+    transition: all 0.1s ease-out;
+
+    &:hover {
+      box-shadow: 0 0 10px rgba($cerulean-color, 0.5);
+    }
+  }
+}
