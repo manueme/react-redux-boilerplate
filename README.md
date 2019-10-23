@@ -11,10 +11,13 @@ The app store is divided into modules with actions, for example, the ***auth*** 
 ### Main features and characteristics
 
 - Bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-- [TypeScript FSA](https://github.com/aikoven/typescript-fsa)
-- [Redux](https://es.redux.js.org/)
+- [Redux](https://react-redux.js.org/)
 - [Redux-Observable](https://redux-observable.js.org/)
+- [React Router Dom](https://github.com/ReactTraining/react-router/tree/master/packages/react-router-dom)
+- [Connected React Router](https://github.com/supasate/connected-react-router)
 - [Sass (SCSS)](https://sass-lang.com/)
+- [TypeScript FSA](https://github.com/aikoven/typescript-fsa)
+- [Validator TS](https://www.npmjs.com/package/validator.ts)
 
 ## Available Scripts
 
