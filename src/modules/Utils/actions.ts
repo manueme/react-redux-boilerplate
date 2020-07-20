@@ -16,7 +16,7 @@ export interface IProcessSimpleActionResult<T> {
   payload?: T;
 }
 
-export function processStandarAction<P, R>(
+export function processStandardAction<P, R>(
   action: AppAction,
   actionCreator: AsyncActionCreators<P, R, IApiError>
 ): IProcessSimpleActionResult<R> | undefined {

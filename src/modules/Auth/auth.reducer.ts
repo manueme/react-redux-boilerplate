@@ -1,6 +1,6 @@
 import { IAuthState } from "./auth.types";
 import { AuthAction, loginAction, signUpAction } from "./auth.actions";
-import { processStandarAction } from "../Utils/actions";
+import { processStandardAction } from "../Utils/actions";
 
 export const AUTH_STORE_INITIAL_STATE: IAuthState = {
   authData: undefined,
@@ -19,7 +19,7 @@ export default function authReducer(
   state = AUTH_STORE_INITIAL_STATE,
   action: AuthAction
 ): IAuthState {
-  const loginResult = processStandarAction(action, loginAction);
+  const loginResult = processStandardAction(action, loginAction);
   if (loginResult) {
     return {
       ...state,
@@ -35,7 +35,7 @@ export default function authReducer(
       authData: loginResult.payload || state.authData
     };
   }
-  const signupResult = processStandarAction(action, signUpAction);
+  const signupResult = processStandardAction(action, signUpAction);
   if (signupResult) {
     return {
       ...state,

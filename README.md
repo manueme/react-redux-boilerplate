@@ -6,7 +6,7 @@ You can use this project to start a React web application, it contains examples 
 
 The "*meAction*" fetches a user from [https://jsonplaceholder.typicode.com](https://jsonplaceholder.typicode.com/), there's a config file to define API_URL for each environment.
 
-The app store is divided into modules with actions, for example, the ***auth*** module has the *loginAction* and the *signUpAction*. Each action has a flag associated indicating if the action is currently in a "fetching" state or if the action ended with an "error". There is a "**processStandarAction**" function to easily write a typical reducer for a store module with these flags and any response payload of the action whether it is an error or not.
+The app store is divided into modules with actions, for example, the ***auth*** module has the *loginAction* and the *signUpAction*. Each action has a flag associated indicating if the action is currently in a "fetching" state or if the action ended with an "error". There is a "**processStandardAction**" function to easily write a typical reducer for a store module with these flags and any response payload of the action whether it is an error or not.
 
 ### Main features and characteristics
 

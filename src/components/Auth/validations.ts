@@ -2,7 +2,7 @@ import {
   ILoginActionInput,
   ISignUpActionInput
 } from "../../modules/Auth/auth.actions";
-import * as validator from "validator";
+import validator from "validator";
 
 export interface IFormError<T> {
   error: string;
@@ -18,12 +18,12 @@ export function validateSignUpForm(
     return false;
   }
   // Validate email
-  if (!validator.isEmail(form.email)) {
+  if (!validator.isEmail(form.email ?? '')) {
     setError({ error: "Please enter a valid email address.", field: "email" });
     return false;
   }
   // Validate password
-  if (form.password.length < 5) {
+  if (!form.password || form.password.length < 5) {
     setError({
       error: "Password must contain 6 or more characters.",
       field: "password"

@@ -1,6 +1,6 @@
 import { IPostState } from "./post.types";
 import { PostAction, getPostsAction } from "./post.actions";
-import { processStandarAction } from "../Utils/actions";
+import { processStandardAction } from "../Utils/actions";
 
 export const POST_STORE_INITIAL_STATE: IPostState = {
   postData: undefined,
@@ -17,7 +17,7 @@ export default function postReducer(
   state = POST_STORE_INITIAL_STATE,
   action: PostAction
 ): IPostState {
-  const getPostsResult = processStandarAction(action, getPostsAction);
+  const getPostsResult = processStandardAction(action, getPostsAction);
   if (getPostsResult) {
     return {
       ...state,

@@ -1,6 +1,6 @@
 import { IUserState } from "./user.types";
 import { MeAction, meAction } from "./user.actions";
-import { processStandarAction } from "../Utils/actions";
+import { processStandardAction } from "../Utils/actions";
 
 export const USER_STORE_INITIAL_STATE: IUserState = {
   userData: undefined,
@@ -17,7 +17,7 @@ export default function userReducer(
   state = USER_STORE_INITIAL_STATE,
   action: MeAction
 ): IUserState {
-  const meResult = processStandarAction(action, meAction);
+  const meResult = processStandardAction(action, meAction);
   if (meResult) {
     return {
       ...state,
